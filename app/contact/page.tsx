@@ -44,7 +44,11 @@ export default function Example() {
                             className="relative z-10 flex items-center justify-center w-12 h-12 text-sm duration-1000 border rounded-full text-zinc-200 group-hover:text-white group-hover:bg-zinc-900 border-zinc-500 bg-zinc-900 group-hover:border-zinc-200 drop-shadow-orange">
 									{socials[1].icon}
 								</span>{" "}
-                        <div className="z-10 flex flex-col items-center">
+                        <form className="z-10 flex flex-col items-center" action="https://api.web3forms.com/submit"
+                              method="POST">
+
+                            <input type="hidden" name="access_key" value="842e0009-97a5-4ad1-bce0-1e7034c0218e"/>
+                            <input type="hidden" name="redirect" value="https://alexanderkonchar.vercel.app/contact/success"/>
                             {/*		<span*/}
                             {/*            className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">*/}
                             {/*			{socials[1].handle}*/}
@@ -55,21 +59,29 @@ export default function Example() {
                             {/*		</span>*/}
                             <Input className="bg-zinc-900 text-zinc-200 border-zinc-600 placeholder:text-zinc-400"
                                    type="text"
+                                   name="name"
+                                   required
                                    placeholder="Your Name"/>
-                            <Input className="bg-zinc-900 text-zinc-200 border-zinc-600 placeholder:text-zinc-400 mt-2"
-                                   type="email"
-                                   placeholder="Your Email"/>
-                            <Input className="bg-zinc-900 text-zinc-200 border-zinc-600 placeholder:text-zinc-400 mt-2"
-                                   type="text"
-                                   placeholder="Subject"/>
+                            <Input
+                                className="bg-zinc-900 text-zinc-200 border-zinc-600 placeholder:text-zinc-400 mt-2"
+                                type="email"
+                                name="email"
+                                required
+                                placeholder="Your Email"/>
+                            <Input
+                                className="bg-zinc-900 text-zinc-200 border-zinc-600 placeholder:text-zinc-400 mt-2"
+                                type="text"
+                                name="Subject Line"
+                                required
+                                placeholder="Subject"/>
                             <Textarea
                                 className="bg-zinc-900 text-zinc-200 border-zinc-600 placeholder:text-zinc-400 mt-2"
-                                placeholder="Message"/>
-                            <Button onClick={() => {
-                                window.location.reload();
-                            }}
+                                placeholder="Message"
+                                required
+                                name="message"/>
+                            <Button type="submit"
                                     className="bg-zinc-900 hover:bg-white text-zinc-200 border border-zinc-600 hover:text-black mt-6">Submit</Button>
-                        </div>
+                        </form>
                     </div>
                 </Card>
             </div>
