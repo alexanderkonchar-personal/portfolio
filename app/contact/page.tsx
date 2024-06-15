@@ -5,6 +5,8 @@ import {Card} from "../components/card";
 import {Input} from "@/components/ui/input"
 import {Textarea} from "@/components/ui/textarea"
 import {Button} from "@/components/ui/button"
+import Particles from "@/app/components/particles";
+import React from "react";
 
 const socials = [
     {
@@ -29,12 +31,16 @@ const socials = [
 
 export default function Example() {
     return (
-        <div className=" bg-gradient-to-tl from-zinc-900/0 via-zinc-900 to-zinc-900/0">
+        <div className="bg-gradient-to-tl from-black via-zinc-600/20 to-black">
             <Navigation/>
+            <Particles
+                className="absolute inset-0 -z-10 animate-fade-in"
+                quantity={1000}
+            />
             <div className="container flex items-center justify-center min-h-screen px-4 mx-auto">
                 <Card>
                     <div
-                        className="p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24  lg:pb-40  md:p-16"
+                        className=" p-4 relative flex flex-col items-center gap-4 duration-700 group md:gap-8 md:py-24  lg:pb-40  md:p-16"
                     >
 								<span
                                     className="absolute w-px h-[90%] md:h-[60%] lg:h-[50%] bg-gradient-to-b from-zinc-500 to-zinc-500/25"
@@ -48,7 +54,8 @@ export default function Example() {
                               method="POST">
 
                             <input type="hidden" name="access_key" value="842e0009-97a5-4ad1-bce0-1e7034c0218e"/>
-                            <input type="hidden" name="redirect" value="https://alexanderkonchar.vercel.app/contact/success"/>
+                            <input type="hidden" name="redirect"
+                                   value="https://alexanderkonchar.vercel.app/contact/success"/>
                             {/*		<span*/}
                             {/*            className="lg:text-xl font-medium duration-150 xl:text-3xl text-zinc-200 group-hover:text-white font-display">*/}
                             {/*			{socials[1].handle}*/}
